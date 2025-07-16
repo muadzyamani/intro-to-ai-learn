@@ -1,1 +1,1 @@
-# intro-to-ai-learn
+Taken from the [Introduction to Artificial Intelligence](https://www.linkedin.com/learning/introduction-to-artificial-intelligence-24947908/why-you-need-to-know-about-artificial-intelligence?u=76881922) course in LinkedIn Learning.
