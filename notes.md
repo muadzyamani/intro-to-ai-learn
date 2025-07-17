@@ -248,3 +248,71 @@ What impact will the Internet of Things (IoT) have on artificial intelligence?
 -   **Correct:** IoT devices connect the physical world to the digital world, providing AI systems with a wealth of new data about where people go and how they interact with their physical environment, enabling new types of predictions.
 
 ---
+
+# 5. Learn from Data
+
+## Labeled and unlabeled data
+
+-   Machine learning can be understood through two primary learning strategies, analogous to learning a new skill like chess.
+-   **Supervised Learning:**
+    -   This is like having a tutor. A data scientist provides the machine with labeled data (the "correct answers").
+    -   The system trains itself by trying to match the correct labels and adjusts when it makes a mistake.
+    -   **Strength:** Can be very accurate for specific tasks.
+    -   **Weakness:** Requires a knowledgeable expert to spend time creating high-quality labeled data.
+    -   **Example:** Amazon could label 1,000 customers as "high spenders." A supervised learning system would then analyze the data of these customers to find common patterns that define a high spender.
+-   **Unsupervised Learning:**
+    -   This is like learning by quietly observing games in a public park. The system is given a large amount of unlabeled data and must find patterns and structures on its own.
+    -   The system might not know the names or labels for things, but it can figure out relationships and strategies through observation.
+    -   **Strength:** Does not require the manual effort of labeling data. Can uncover unexpected patterns.
+    -   **Weakness:** Needs access to a massive amount of data to be effective.
+    -   **Example:** An unsupervised system is given all of Amazon's customer data. It might discover a surprising correlation on its own, such as customers who buy chessboards are also likely to buy expensive kitchen appliances.
+
+## Massive datasets
+
+-   Traditional programming, which relies on explicit instructions, fails with AI because there are too many possible combinations to program.
+-   Machine learning switches the model: instead of programmers inputting instructions, they input data and let the machine learn the patterns.
+-   **Supervised Learning Process:**
+    1.  **Split the Data:** The available data is split into two parts:
+        -   **Training Set:** A smaller, labeled portion of data that the machine uses to learn.
+        -   **Test Set:** A much larger, often unlabeled, dataset used to see how well the trained machine performs on new data.
+    2.  **Train the Algorithm:** Machine learning algorithms use statistics to find relationships and patterns within the training data.
+    3.  **Test the Model:** Once the algorithm is accurate on the training set, it is applied to the larger test set to validate its performance.
+-   **Example: Spam Detection**
+    -   **Task:** Classify emails as either "Spam" or "Regular Message." This is a **Binary Classification** problem.
+    -   **Training Set:** 10,000 emails, with 1,000 manually labeled as "Spam."
+    -   **Algorithm:** The machine learns statistical patterns (e.g., emails with words like "Lucky," "Winner," or "Congratulations" are more likely to be Spam).
+    -   **Test Set:** 1 million unlabeled emails. The trained model is used to identify Spam within this massive set.
+
+## Data models
+
+-   A **Data Model** is an abstraction of what the AI system has learned from all its training and data. It's the core concepts the machine has extracted.
+-   Data models are never "finished." Machine learning teams constantly work to improve the model's accuracy (e.g., from 99% to 99.9%).
+-   **Human Analogy:** Humans use data models to understand the world. Your "driving model" lets you operate an unfamiliar car, and your "bird model" helps you recognize a bird you've never seen before. The more data you process (experience), the more accurate your model.
+-   **Predictive AI and Data Models:**
+    -   Data models are central to predictive AI.
+    -   Each specific predictive task requires its own specialized data model.
+    -   Training to be a better driver (improving your "driving model") will not make you better at identifying birds (your "bird model").
+-   **Generative AI vs. Data Models:**
+    -   Generative AI is more flexible and needs much more data, combining knowledge from many different domains.
+    -   It doesn't use a single, narrow data model in the same way as predictive AI.
+    -   **Example:** To generate a story about driving a sports car with Big Bird, a GenAI system needs to access knowledge about cars, birds, and television shows simultaneously.
+-   Data models remain the core of AI in most organizations because predictive AI offers powerful, accurate results for specific, well-defined problems.
+
+## Chapter Quiz
+
+**Question 1 of 2**
+
+A new online camping goods store wants to find connections between products customers buy and other products they might buy. Why would the company use unsupervised learning?
+
+-   **It does not yet have enough customers to make supervised learning meaningful.**
+-   **Correct:** Supervised learning requires a large, established set of labeled data (e.g., "customers who bought X also bought Y"). A new store lacks this historical data, making unsupervised learning a better choice to discover initial patterns.
+
+**Question 2 of 2**
+
+You're a preschool worker and you want to teach your class the letters in the alphabet. So you draw the letter “B” on the board. Then you ask the two-year-old students to find a block with that same letter. Some of the students correctly find the blocks with the letter “B”, but some of the students confuse the letter “B” with the letter “D.” So the incorrect students compare their block to the letter “B” on the board, recognize the error and then decide to get another block. What type of learning is this?
+
+-   **supervised learning**
+-   **Correct:** This is an example of supervised learning because there is labeled data (the letter "B" on the board) that serves as the "correct answer." The students (the "system") make a guess by picking a block, compare it to the label, and adjust their strategy if they are wrong.
+
+---
+
