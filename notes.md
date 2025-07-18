@@ -378,3 +378,90 @@ Why might you want to use reinforcement learning instead of unsupervised learnin
 -   **Correct:** Unsupervised learning is good for finding existing groups in data. Reinforcement learning is more advanced; it develops strategies to achieve a goal (like maximizing a reward), allowing it to "invent" new ways to encourage customer behavior or solve a problem.
 
 ---
+
+# 7. Machine Learning Algorithms
+
+## Common algorithms
+
+-   Machine learning is not one single program but a collection of different algorithms, many borrowed from statistics.
+-   These algorithms are like a chef's kitchen tools; each has a primary use, but they can be combined creatively to solve problems.
+-   **Example: A company using both supervised and unsupervised learning.**
+    1.  **Supervised Learning (Classification):** First, they used binary classification to divide customers into two groups: those who use promotions and those who don't.
+    2.  **Unsupervised Learning (Clustering):** Next, they took the "promotion users" group and applied unsupervised learning to find new patterns. The machine created its own clusters and identified a small, valuable subgroup of "promotion super users."
+    3.  **Result:** The company then targeted this super-user group with more promotions, increasing its success rate.
+-   Data science teams mix and match algorithms based on the data and the problem. Each algorithm has different strengths, weaknesses, and processing power requirements.
+
+## K-nearest neighbor
+
+-   **K-Nearest Neighbor (KNN)** is a common supervised machine learning algorithm used for **multi-class classification** (where there are more than two possible outcomes).
+-   **Core Idea:** It classifies new, unknown data by looking at the known data points ("neighbors") that are closest to it. The goal is to minimize the distance between the unknown point and its neighbors.
+-   **Analogy: Classifying a dog breed at an animal shelter.**
+    -   An unknown dog is compared to dogs of known breeds.
+    -   The unknown dog is classified based on the breed of the dogs it most closely resembles in features like face shape and hair color.
+-   **How it Works:**
+    1.  **Plot Data:** Known, labeled data is plotted on a graph using key features as predictors (e.g., X-axis for weight, Y-axis for hair length).
+    2.  **Add Unknown Point:** The new, unlabeled data point is added to the graph.
+    3.  **Find Neighbors:** The algorithm identifies the 'k' nearest labeled data points to the new point. 'K' is a number you choose (e.g., 5). The distance is often calculated using **Euclidean Distance**.
+    4.  **Classify by Majority:** The new point is assigned to the class that is most common among its 'k' nearest neighbors. (e.g., if 3 of the 5 nearest neighbors are Shepherds, the unknown dog is classified as a Shepherd).
+-   **Use Case:** Commonly used in finance to identify promising stocks by comparing them to the historical performance of similar stocks.
+
+## K-means clustering
+
+-   **K-Means Clustering** is a common unsupervised machine learning algorithm used to group data into a specified number ('k') of clusters.
+-   **Core Idea:** The algorithm iteratively organizes data points into 'k' clusters by finding the best central point (**centroid**) for each cluster.
+-   **Analogy: Clustering dogs at a shelter into 3 groups for 3 new shelters.**
+    -   The 'k' in k-means would be 3.
+-   **How it Works:**
+    1.  **Initialize:** The algorithm starts by randomly selecting 'k' data points to be the initial centroids.
+    2.  **Assign:** Each data point is assigned to the cluster of its nearest centroid.
+    3.  **Update:** The centroid of each cluster is recalculated to be the mean (average) position of all points in that cluster.
+    4.  **Iterate:** Steps 2 and 3 are repeated until the centroids stop moving significantly, and the clusters become stable.
+-   **Challenges:**
+    -   It forces the data into exactly 'k' clusters, even if the data doesn't naturally group that way.
+    -   It can be sensitive to **outliers** (an isolated data point will still be forced into a cluster).
+-   **Use Case:** Retailers use it to cluster customers into groups like "loyal customers," "regular customers," and "lowest-price shoppers" to create targeted marketing strategies.
+
+## Regression
+
+-   **Regression Analysis** is a supervised machine learning algorithm used to understand the relationship between variables and predict continuous outcomes by identifying trends.
+-   **Core Idea:** It looks at the relationship between **predictors** (input variables) and an **outcome**. It tells you *that* a trend exists, but not *why*.
+-   **Analogy: Seasonal car sales.**
+    -   A company observes that people buy more convertibles in the summer and more trucks in the winter. Regression helps quantify this trend to predict future sales.
+-   **How it Works:**
+    -   Data is plotted on an X-Y diagram (e.g., X-axis for months, Y-axis for sales).
+    -   A **trend line** is drawn through the data to represent the relationship between the variables.
+    -   The more data you have, the more accurate the trend line and the better the predictions.
+-   **Use Case:** Large retailers like Walmart use regression to predict seasonal demand for products (e.g., more Pop-Tarts in summer) to optimize stock levels.
+-   **Note:** Some debate whether regression is "true" machine learning, as it's more about predicting based on statistical trends than learning entirely new concepts.
+
+## Naive Bayes
+
+-   **Naive Bayes** is a popular and powerful supervised machine learning algorithm for classification.
+-   **Core Idea ("Naive"):** It's called "naive" because it makes the simplifying assumption that all predictors (features) are **independent** of one another.
+-   **Analogy: Classifying a dog's breed using multiple features.**
+    -   Even though a dog's height and weight are related, Naive Bayes treats them as two completely separate, independent pieces of evidence.
+-   **How it Works (Class Predictor Probability):**
+    1.  For an unknown item, the algorithm looks at **each predictor individually**.
+    2.  It calculates the probability that the item belongs to each possible class, based on that single predictor.
+    3.  This is done for all predictors.
+    4.  The probabilities are combined to make a final classification, assigning the item to the class with the highest overall probability.
+-   **Use Case:** Banks use it for fraud detection by looking at many independent transaction predictors (time, location, amount, etc.). Cybersecurity firms use it to detect threats by analyzing independent network traffic features.
+-   **Key Strength:** Because it makes few assumptions, it can effectively handle a huge number of predictors, which often makes it more accurate.
+
+## Chapter Quiz
+
+**Question 1 of 2**
+
+You work for a company that’s selling electric cars to consumers. The company wants to get the maximum amount of value from its advertising dollars. So it wants to ramp up advertising when it thinks that customers would be most interested in purchasing an electric car. Your data science team wants to create a regression analysis based on fuel prices. How might this look on an XY diagram?
+
+-   **Create a trendline with fuel prices along the X axis and electric car sales on the Y axis.**
+-   **Correct:** Regression analysis involves plotting two variables on an XY diagram to see if a trendline emerges. A clear trendline indicates a predictable relationship, such as electric car sales rising as fuel prices rise.
+
+**Question 2 of 2**
+
+How is K Nearest Neighbor like the old saying, “birds of a feather flock together?”
+
+-   **Classify unknown data against the closest data that you do know.**
+-   **Correct:** The saying implies that things that are similar tend to group together. KNN works on this principle by classifying an unknown item based on the classification of the known items that are most similar (closest) to it.
+
+---
