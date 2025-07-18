@@ -530,3 +530,64 @@ You work for a credit card company that's trying to do a better job identifying 
 -   **Correct:** The model learned a rule that was too simple ("all electronics purchases are likely fraud"). This rule worked on the training data but failed to generalize to the real world, where most electronics purchases are legitimate. This is a classic case of underfitting.
 
 ---
+
+# 9. Artificial Neural Networks
+
+## Build a neural network
+
+-   Artificial Neural Networks (ANNs) are a type of machine learning used when datasets are too massive for traditional algorithms.
+-   ANNs are structured to mimic the human brain, using neurons organized into layers.
+-   **Structure of an ANN:**
+    -   **Input Layer:** Where the data first enters the network.
+    -   **Hidden Layers:** One or more layers between the input and output. This is where the processing and pattern recognition happens.
+    -   **Output Layer:** The final layer that produces the result (e.g., a classification).
+-   **Deep Learning:** An ANN with many hidden layers is called a "deep learning" network. More layers allow the network to identify more complex patterns.
+-   **How it Works (Image Recognition Example):**
+    -   **Task:** A binary classification to identify if an image contains a "dog" or "not dog."
+    -   **Input:** An image is broken down into pixels. A 25x25 pixel image has 625 data points. Each pixel is fed into a neuron in the input layer.
+    -   **Processing:** Each neuron in a hidden layer has an **activation function**, which acts like a gate, deciding whether to pass the signal to the next layer.
+    -   **Feed-Forward:** The data moves from the input layer, through the hidden layers, to the output layer. This is called a **feed-forward neural network**.
+    -   **Output:** The output layer has two nodes (dog/not dog), each with a probability score.
+-   ANNs are most often used for supervised learning and are "self-tuning," meaning they can adjust themselves based on whether their predictions are correct.
+
+## Weighing the connections
+
+-   Humans naturally "weigh" data to make predictions (e.g., a blurry object in a grassy field is more likely a dog than one in a desert).
+-   ANNs do the same thing by assigning a numerical **weight** to every connection between neurons. These weights are the "tuning knobs" of the network.
+-   If a hidden layer has 100 neurons, each neuron will have 100 weighted connections going out to the next layer.
+-   **The Tuning Process:**
+    1.  When an ANN is first initialized, the thousands of weights on its connections are assigned random numbers.
+    2.  During training (a supervised learning process), the network is fed labeled training data.
+    3.  The network makes a prediction and compares its output to the correct answer.
+    4.  It then goes back and adjusts the weights on its connections to make its next prediction more accurate.
+    5.  This process is repeated over and over, allowing the network to "tune itself" until it can accurately identify patterns.
+
+## The activation bias
+
+-   An ANN is a form of machine learning and must deal with the **bias-variance tradeoff**.
+-   **Weights correct for variance:** Adjusting the weights on the connections helps reduce the **variance** (the spread or scatter) of the predictions. It's like trying to get a tight cluster of darts.
+-   **Bias corrects for bias:** To adjust for **bias** (the consistent error in one direction), the network adds a bias number to each **neuron**. This shifts the neuron's activation function, moving the entire group of predictions closer to the target (the bullseye).
+-   **The Tradeoff in Action:**
+    -   The network is constantly trying to find a sweet spot.
+    -   Adjusting weights to decrease variance can slightly increase bias.
+    -   Adjusting the neuron bias to decrease bias can slightly increase variance.
+-   **Overfitting:** ANNs tend to overfit the training data, meaning they learn it too well. This can make the bias-variance adjustments even larger and more difficult to balance.
+-   **Key Distinction:** **Weights** are on the **connections** between neurons. **Bias** is on the **neuron** itself. The machine can only adjust the bias after it sees what happens with the variance.
+
+## Chapter Quiz
+
+**Question 1 of 2**
+
+You work for a security firm that wants to use an artificial neural network to create a video facial recognition system. So you create a training set with hundreds of images of people that are found in your video footage. You initialize the artificial neural network with random weights assigned to all its connections. When you feed through the first few images the system does a terrible job identifying whether those people are included in the video. What would the artificial neural network now do to try and improve?
+
+-   **It will adjust the weights of the connections to see if it does a better job making a prediction.**
+-   **Correct:** A supervised learning artificial neural network is self-tuning. That means it makes a prediction and then checks that prediction against the labeled data. The network tunes itself by adjusting the weights of the connections and the bias on the neurons. Then it sees if these adjustments improve the outcome.
+
+**Question 2 of 2**
+
+Kira is building a neural network to identify customer returns using binary classifications of defective or unsatisfied. In which layer of this neural network will Kira have a probability score?
+
+-   **the output layer**
+-   **Correct:** The output layer has probability scores for the two binary classifications that help determine whether the network properly tunes itself.
+
+---
