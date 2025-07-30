@@ -649,3 +649,59 @@ How can you best describe the cost function as it applies to neural networks?
 -   **Correct:** The cost function is a quantitative measure of the difference, or error, between the network's predicted output and the actual, correct output.
 
 ---
+
+# 11. The Rise of Generative AI
+
+## Self-supervised learning
+
+-   This technique is analogous to using the Rosetta Stone, where a known language (Greek) was used as a guide to label an unknown one (Egyptian hieroglyphs).
+-   **Self-Supervised Learning** is a technique used by generative AI to create labels for the world's massive amount of unlabeled, unstructured data.
+-   **How it Works:**
+    1.  The system uses **unsupervised learning** to cluster similar unlabeled data together (e.g., grouping images that contain fur).
+    2.  It then looks for other related data that can act as a guide or "Rosetta Stone" (e.g., captions that contain words like "walk" or "park").
+    3.  Based on this guide, the system makes educated guesses and generates its own labels, called **pseudo labels**, for the unlabeled data.
+    4.  This newly labeled data can then be used in a **supervised learning** context for tasks like classification.
+-   **The Goal:** To get value from billions of data points that would otherwise be unusable because they are not manually labeled.
+-   This approach requires enormous computing power, so it is primarily used by very large companies.
+
+## Foundation models
+
+-   Self-supervised learning is the primary technique used to create **foundation models**, which are the core of generative AI systems.
+-   **Foundation Models vs. Data Models:**
+    -   **Data Models (Predictive AI):** Are fine-tuned for one specific task and must be retrained to handle new data. They are streamlined but inflexible.
+    -   **Foundation Models (Generative AI):** Can perform a wide range of tasks without retraining. They are powerful and flexible.
+-   **How Foundation Models are Built:**
+    -   A self-supervised system "vacuums up" vast amounts of data (e.g., all the data in the Library of Congress).
+    -   It uses unsupervised learning to create clusters of related ideas (e.g., a cluster about "ancient sculptures").
+    -   It then creates billions of **pseudo labels** for these clusters (e.g., "Greek," "marble," "Acropolis," "Michelangelo").
+-   This wide base of knowledge allows the model to connect disparate concepts and generate novel creations (e.g., "a marble sculpture of a French fry").
+-   **Hallucinations:** A common side effect of foundation models. This is when the system says something that sounds plausible but is untrue. It happens when the system incorrectly connects two of its billions of pseudo labels.
+
+## Large language models (LLM)
+
+-   An LLM is a type of foundation model focused on text.
+-   **Analogy: Stochastic Parrots (coined by Emily Bender).**
+    -   Imagine parrots that listen to everything everyone says and then repeat back what they've heard. They would seem intelligent but would have no understanding of meaning.
+    -   LLMs are similar: they vacuum up trillions of words and then parrot back phrases one word at a time based on statistical probabilities, not understanding.
+-   This is a modern version of the **Chinese Room Argument**, which argues that symbol manipulation is not true intelligence.
+-   **Criticisms and Dangers:**
+    -   Critics argue that LLMs can never achieve true intelligence and that their "fake intelligence" can be dangerous.
+    -   Hallucinations are not a fixable bug but an expected side effect of learning without understanding meaning. The models don't care about facts, only probabilities.
+-   **Counter-argument:** Proponents believe that as models process more data, they will get better at separating fact from fiction.
+-   **Key Takeaway:** There is a big difference between *being* intelligent and *seeming* intelligent. For many tasks, an AI that seems intelligent is sufficient.
+
+## Image diffusion models
+
+-   This is a technique used by generative AI systems to learn how to create new images.
+-   **Analogy: Learning to Bake by Un-baking and Re-baking.**
+    -   Imagine a new baker who must learn to make cakes by looking only at finished cakes.
+    -   To understand the ingredients, they smash the cakes into mush and then practice re-baking them back to their original form.
+-   **How Image Diffusion Works:**
+    1.  The system takes an image and systematically adds noise until it is completely blurred and diffused ("smashed").
+    2.  It then learns to reverse this process, removing the noise step-by-step to perfectly recreate the original image ("re-baked").
+-   **The Purpose:**
+    -   By learning to destroy and recreate billions of images, the system gains a deep, fundamental understanding of the "ingredients" of an image—the patterns, lines, colors, and textures that define objects.
+    -   This deep knowledge of ingredients allows it to combine them in new ways to generate entirely new images (e.g., an astronaut on a brick wall).
+-   Like all foundation models, this process relies on self-supervised learning and an enormous amount of data. The system learns pixelated patterns, not objects in a human way.
+
+---
