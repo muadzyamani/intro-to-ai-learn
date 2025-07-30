@@ -705,3 +705,60 @@ How can you best describe the cost function as it applies to neural networks?
 -   Like all foundation models, this process relies on self-supervised learning and an enormous amount of data. The system learns pixelated patterns, not objects in a human way.
 
 ---
+
+# 12. Generative AI Architecture
+
+## Generative adversarial networks (GAN)
+
+-   GANs are a way to generate photorealistic images without the need for a foundation model or self-supervised learning.
+-   **Core Concept:** The architecture is "adversarial," pitting two artificial neural networks against each other in a competition.
+    -   **The Generator:** An unsupervised network that tries to generate new, realistic images. Its initial attempts are poor (like splashed paint).
+    -   **The Discriminator:** A supervised network trained to classify photos as either "real" or "fake."
+-   **How it Works:**
+    1.  The generator creates an image and sends it to the discriminator.
+    2.  The discriminator rejects the image as fake and provides feedback.
+    3.  The generator tweaks its process based on the feedback and tries again.
+    4.  This "battle" continues for billions of attempts until the generator creates images so realistic that the discriminator can no longer tell if they are fake.
+-   **Downsides:**
+    -   **Less Flexible:** The generator can only create images of the type the discriminator was trained on (e.g., if trained on portraits, it can only make portraits).
+    -   **Not for Novel Compositions:** It cannot be used to generate imaginative images like "dolphins in spacesuits."
+-   **Upsides:**
+    -   They don't rely on a foundation model.
+    -   They require much less data and are easier to set up than diffusion models.
+-   **Best Use Case:** Creating extremely photorealistic images of existing categories, such as fake human portraits or landscapes.
+
+## Variational autoencoder (VAE)
+
+-   Autoencoders are often used for tasks like colorizing an old image or increasing its resolution. They are a "silent work engine" behind many AI image tools.
+-   **Core Concept:** An autoencoder learns to encode the "essence" of an object from thousands of examples and then uses that perfect essence to decode and improve an imperfect image.
+-   **Process:**
+    1.  **Encoding:** The system analyzes thousands of images of a subject (e.g., trees) and encodes their essential features into a compressed representation in a "latent space." This is like creating a perfect pencil outline of the subject.
+    2.  **Anomaly Detection:** As part of encoding, the system separates the main subject (the "signal") from imperfections like scratches or grain (the "noise" or "anomalies").
+    3.  **Decoding:** The system uses the "perfect" code to reconstruct the image, either as a perfect copy or as a dramatically enhanced version (e.g., colorized, sharpened).
+-   **Challenges:**
+    -   It is a form of predictive AI, not a fully flexible generative model.
+    -   It cannot generate novel compositions (e.g., a vase with a tree inside).
+    -   It must be trained on thousands of labeled images of a specific subject.
+-   **Best Use Case:** "Bread-and-butter" image enhancement for photographers, artists, and graphic designers.
+
+## Transformers
+
+-   The transformer architecture was introduced in a 2017 paper by Google researchers titled "Attention is All You Need."
+-   **Core Concept: Attention.** Transformers focus on the order of words in a sentence to understand the relationships between them, their context, and the sentence's overall purpose.
+    -   **Example:** It can distinguish the different meanings of "I want to paint the wall blue" and "I want to paint the blue wall."
+-   **How it Works:** Similar to an autoencoder, it uses an encoder-decoder structure. It encodes large blocks of text, assigning numerical values to words based on their position to learn the purpose of the language.
+-   **Impact:** This architecture proved to be one of the best ways to understand language, becoming the foundation for Large Language Models like **ChatGPT** (Generative Pre-trained **Transformer**).
+-   **Innovations:**
+    -   The "attention" mechanism is now also used for images to help generators find faces or key parts of an image.
+    -   **Self-attention** allows a transformer to process massive amounts of data (terabytes or petabytes) and understand word relationships with very little human intervention, enabling it to generate coherent text based on a larger context.
+
+## Chapter Quiz
+
+**Question 1 of 1**
+
+You work as a graphic designer for an online magazine. The art director has given you an old black and white photo of a tree. They ask you to create two images. One which colorizes the tree and the other which is a similar tree growing on the surface of Mars. Which generative AI image technique could you use for each image?
+
+-   **You could use a Variational Autoencoder to colorize one image and a diffusion model for the Mars image.**
+-   **Correct:** A Variational Autoencoder is trained on existing images. It finds the “essence” of the images through this training. So it could be used to enhance an image that the system “knows.” A diffusion model can be used to generate an entirely new image. That means it could generate a tree on Mars.
+
+---
