@@ -591,3 +591,61 @@ Kira is building a neural network to identify customer returns using binary clas
 -   **Correct:** The output layer has probability scores for the two binary classifications that help determine whether the network properly tunes itself.
 
 ---
+
+# 10. Improve Accuracy
+
+## Learning from mistakes
+
+-   Artificial neural networks don't see predictions as simply "right" or "wrong." They need a more specific measure of how incorrect they are.
+-   **Cost Function:** This is a number that measures the "wrongness" of a prediction by comparing the network's output to the correct answer.
+    -   A small error (e.g., predicting 97% dog for a cat photo) has a low cost.
+    -   A large error (e.g., predicting 99% dog for a photo of a mountain) has a much higher cost.
+    -   A higher cost signals that the network needs to make more aggressive adjustments to its weights and biases.
+-   **Gradient Descent:** This is the mathematical method used to minimize the cost function.
+    -   "Gradient" means steepness, and "descent" means going down. The goal is to find the steepest downward path to the lowest possible error.
+    -   **Analogy:** Throwing a dart. If you miss the board entirely (a high-cost error), you make a big change to your aim. If you are very close to the bullseye (a low-cost error), you make a tiny adjustment.
+-   **Backpropagation (Backprop):** This is the process of sending the error (calculated by the cost function) backward through the network to make adjustments.
+    -   While data feeds *forward* from the input to the output layer, the error correction propagates *backward*.
+    -   The network uses the gradient descent calculation to determine how much to adjust the weights and biases in each layer based on the seriousness of the error.
+
+## Step through the network
+
+-   This section outlines the end-to-end process of building an AI system to classify images as "dog" or "not dog" using an ANN.
+-   **Step 1: Define the Problem.**
+    -   The goal is a binary classification (two categories: dog/not dog). This means supervised machine learning will be used.
+-   **Step 2: Choose the Approach.**
+    -   Because image recognition involves a lot of data (pixels), an artificial neural network is a better choice than a standard machine learning algorithm like KNN or Naive Bayes.
+-   **Step 3: Build the Network.**
+    -   Create the input, hidden, and output layers.
+    -   The output layer will have two nodes, one for "dog" and one for "not dog."
+-   **Step 4: Initialize the Network.**
+    -   The weights on all connections are assigned random numbers.
+    -   The bias on all nodes is set to zero. This gives the network a "clean slate."
+-   **Step 5: Train the Network.**
+    -   Feed the labeled **training set** into the network.
+    -   The network makes a guess (e.g., "62% chance it's a dog").
+    -   It compares its guess to the correct label and calculates the error using the **cost function**.
+    -   It uses **backpropagation** and **gradient descent** to go backward and adjust the weights and biases to reduce the error.
+    -   This process is repeated for the entire training set.
+-   **Step 6: Test the Network.**
+    -   Once trained, the network is given the unlabeled **test set** to see how well it performs on new data.
+-   **Step 7: Evaluate and Refine.**
+    -   If the network does well on the training set but poorly on the test set, it is likely **underfitting** the data. This means the model is too simple and doesn't have enough complexity to handle new, unseen data. The model may need to be made more complex.
+
+## Chapter Quiz
+
+**Question 1 of 2**
+
+With an artificial neural network what is the point of having a cost function?
+
+-   **It helps the network determine the cost of the error so they can make larger or smaller adjustments to its guesses.**
+-   **Correct:** The cost function provides a measurement of "wrongness." A large cost (a big error) signals the network to make large adjustments to its weights and biases, while a small cost means only minor adjustments are needed.
+
+**Question 2 of 2**
+
+How can you best describe the cost function as it applies to neural networks?
+
+-   **a number the system uses to measure its answer against the correct answer**
+-   **Correct:** The cost function is a quantitative measure of the difference, or error, between the network's predicted output and the actual, correct output.
+
+---
